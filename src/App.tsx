@@ -42,8 +42,8 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
-    console.log("droppedElement: ", droppedElement);
-  }, [droppedElement]);
+    console.log("draggedElement: ", draggedElement);
+  }, [draggedElement]);
 
   const handleDragStart = (element: Element) => {
     console.log("element: ", element);
@@ -65,7 +65,7 @@ const App: React.FC = () => {
   return (
     <div>
       <ElementList elements={['div', 'span', 'img']} onClick={handleDragStart} />
-      <Board onDragOver={handleDragOver} onDrop={(event) => droppedElement && handleDrop(event, draggedElement!)}>{droppedElement && <RenderElement element={droppedElement} />}</Board>
+      <Board onDragOver={handleDragOver} onDrop={(event) => draggedElement && handleDrop(event, draggedElement!)}>{droppedElement && <RenderElement element={droppedElement} />}</Board>
     </div>
   );
 };
